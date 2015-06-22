@@ -9,21 +9,25 @@ var gulp       = require("gulp"),
 gulp.task("default", function () {
 	gulp.src("src/css/index.css")
 		.pipe(minifyCSS())
-		.pipe(gulp.dest("dist/css/index.css"));
+		.pipe(gulp.dest("dist/public/css/index.css"));
 		
 	gulp.src("src/js/app.js")
 		.pipe(uglify())
-		.pipe(gulp.dest("dist/js/app.js"));
+		.pipe(gulp.dest("dist/public/js/app.js"));
+		
+	gulp.src("src/server.js")
+		.pipe(uglify())
+		.pipe(gulp.dest("dist/server.js"));
 		
 	gulp.src("src/index.jade")
 		.pipe(jade())
 		.pipe(minifyHTML())
-		.pipe(gulp.dest("dist/index.html"));
+		.pipe(gulp.dest("dist/public/index.html"));
 		
 	gulp.src("src/pages/**.jade")
 		.pipe(jade)
 		.pipe(minifyHTML())
-		.pipe(gulp.dest("dist/pages/"));
+		.pipe(gulp.dest("dist/public/pages/"));
 	});
 
 gulp.task("deploy", function () {
