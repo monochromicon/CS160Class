@@ -3,7 +3,8 @@ var gulp       = require("gulp"),
 	minifyCSS  = require("gulp-minify-css"),
 	uglify     = require("gulp-uglify"),
 	jade       = require("gulp-jade"),
-	connect    = require("gulp-connect");
+	connect    = require("gulp-connect"),
+	rsync      = require("gulp-rsync");
 	
 gulp.task("default", function () {
 	gulp.src("src/css/index.css")
@@ -23,4 +24,15 @@ gulp.task("default", function () {
 		.pipe(jade)
 		.pipe(minifyHTML())
 		.pipe(gulp.dest("dist/pages/"));
+	});
+
+gulp.task("deploy", function () {
+	gulp.src("dist/")
+		.pipe(rsync({
+			hostname: "monochromicon.me",
+			username: "root",
+			root: "dist",
+			incremental: true,
+			destination: "/var/web/cs"	
+		}));
 });

@@ -23,6 +23,7 @@
 		"gulp-minify-css": "*",
 		"gulp-uglify": "*",
 		"gulp-jade": "*",
-		"gulp-connect": "*"
+		"gulp-connect": "*",
+		"gulp-rsync": "*"
 	}
 }
