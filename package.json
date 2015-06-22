@@ -1,0 +1,28 @@
+{
+	"name": "CS160 Class",
+	"version": "0.0.0",
+	"contributors": [
+		{
+			"name": "Graham Barber",
+			"email": "grahammbarber@gmail.com"
+		},
+		{
+			"name": "Elisabeth Arvey",
+			"email": "arvey.elisabeth@gmail.com"
+		}
+	],
+	"dependencies": {
+		"express": "*",
+		"rethinkdb": "*",
+		"async": "*",
+		"body-parser": "*"
+	},
+	"devDependencies": {
+		"gulp": "*",
+		"gulp-minify-html": "*",
+		"gulp-minify-css": "*",
+		"gulp-uglify": "*",
+		"gulp-jade": "*",
+		"gulp-connect": "*"
+	}
+}
