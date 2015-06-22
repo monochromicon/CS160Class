@@ -15,7 +15,9 @@
 		"express": "*",
 		"rethinkdb": "*",
 		"async": "*",
-		"body-parser": "*"
+		"body-parser": "*",
+		"morgan": "*",
+		"method-override": "*"
 	},
 	"devDependencies": {
 		"gulp": "*",
