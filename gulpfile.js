@@ -40,3 +40,10 @@ gulp.task("deploy", function () {
 			destination: "/var/web/cs"	
 		}));
 });
+
+gulp.task("connect", function() {
+	connect.server({
+		root: "app",
+		livereload: true
+	});
+});
