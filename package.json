@@ -1,6 +1,7 @@
 {
-	"name": "CS160 Class",
+	"name": "CS160Class",
 	"version": "0.0.0",
+	"description": "Website for a Javascript course at Linn-Benton Community College.",
 	"contributors": [
 		{
 			"name": "Graham Barber",
