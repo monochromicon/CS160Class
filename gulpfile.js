@@ -15,7 +15,9 @@ gulp.task("buildCSS", function () {
 
 gulp.task("buildAng", function () {
 	gulp.src("src/js/app.js")
-		.pipe(uglify())
+		.pipe(uglify({
+			mangle: false
+		}))
 		.pipe(gulp.dest("dist/public/js/"))
 		.pipe(connect.reload());
 });
