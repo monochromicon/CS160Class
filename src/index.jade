@@ -7,8 +7,9 @@ html(ng-app="webpage")
 		meta(charset="UTF-8")
 		meta(name="description", content="Website for CS160")
 		
-		link(type="text/css", rel="stylesheet" href="css/index.css")
 		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css")
+		link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+		link(type="text/css", rel="stylesheet" href="css/index.css")
 		
 		script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js")
 		script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js")
@@ -17,4 +18,28 @@ html(ng-app="webpage")
 		script(type="text/javascript", src="js/app.js")
 		
 	body(ng-controller="mainController")
-		p {{text}}
+		nav.red.darken-4
+			.nav.nav-wrapper
+				a.brand-logo.active(href="#!") CS160 w/ Sisavath Virasak
+				a.button-collapse(href="#", data-activates="mobile")
+					i.material-icons menu
+				ul.right.hide-on-med-and-down
+					li.waves-effect.waves-light.active
+						a(href="#") Announcements
+							i.material-icons.right announcement
+					li.waves-effect.waves-light
+						a(href="#assignments") Assignments
+							i.material-icons.right assignment
+					li.waves-effect.waves-light
+						a(href="#forum") Forum
+							i.material-icons.right comment
+				ul#mobile.side-nav
+					li.waves-effect.waves-light
+						a(href="#") Announcements
+							i.material-icons.left announcement
+					li.waves-effect.waves-light
+						a(href="#assignments") Assignments
+							i.material-icons.left assignment
+					li.waves-effect.waves-light
+						a(href="#forum") Forum
+							i.material-icons.left comment
