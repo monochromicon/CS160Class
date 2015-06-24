@@ -17,6 +17,8 @@ html(ng-app="webpage")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js")
 		script(type="text/javascript", src="js/app.js")
 		
+		base(href="/")
+		
 	body(ng-controller="mainController")
 		nav.red.darken-4
 			.nav.nav-wrapper
@@ -25,7 +27,7 @@ html(ng-app="webpage")
 					i.material-icons menu
 				ul.right.hide-on-med-and-down
 					li.waves-effect.waves-light.active
-						a(href="#") Announcements
+						a(href="#announcements") Announcements
 							i.material-icons.right announcement
 					li.waves-effect.waves-light
 						a(href="#assignments") Assignments
@@ -35,7 +37,7 @@ html(ng-app="webpage")
 							i.material-icons.right comment
 				ul#mobile.side-nav
 					li.waves-effect.waves-light
-						a(href="#") Announcements
+						a(href="#announcements") Announcements
 							i.material-icons.left announcement
 					li.waves-effect.waves-light
 						a(href="#assignments") Assignments
@@ -43,3 +45,5 @@ html(ng-app="webpage")
 					li.waves-effect.waves-light
 						a(href="#forum") Forum
 							i.material-icons.left comment
+							
+		div(ng-view)
