@@ -20,30 +20,47 @@ html(ng-app="webpage")
 		base(href="/")
 		
 	body(ng-controller="mainController")
-		nav.red.darken-4
+		nav.red.darken-2
 			.nav.nav-wrapper
 				a.brand-logo.active(href="#!") CS160 w/ Sisavath Virasak
 				a.button-collapse(href="#", data-activates="mobile")
 					i.material-icons menu
 				ul.right.hide-on-med-and-down
-					li.waves-effect.waves-light.active
+					li.waves-effect.waves-light.announce
 						a(href="#announcements") Announcements
 							i.material-icons.right announcement
-					li.waves-effect.waves-light
+					li.waves-effect.waves-light.assign
 						a(href="#assignments") Assignments
 							i.material-icons.right assignment
-					li.waves-effect.waves-light
+					li.waves-effect.waves-light.forum
 						a(href="#forum") Forum
 							i.material-icons.right comment
 				ul#mobile.side-nav
-					li.waves-effect.waves-light
+					li.waves-effect.waves-light.announce
 						a(href="#announcements") Announcements
 							i.material-icons.left announcement
-					li.waves-effect.waves-light
+					li.waves-effect.waves-light.assign
 						a(href="#assignments") Assignments
 							i.material-icons.left assignment
-					li.waves-effect.waves-light
+					li.waves-effect.waves-light.forum
 						a(href="#forum") Forum
 							i.material-icons.left comment
-							
-		div(ng-view)
+		
+		div {{location}}					
+		main(ng-view)
+		
+		footer(class="page-footer").red.darken-1
+			.container
+				.row
+					.col.l6.s12
+						h5.white-text Footer Content
+						p.grey-text.text-lighten-4 Some extra information about the course.
+					.col.l4.offset-l2.s12
+						h5.white-text Contact Me
+						ul
+							li
+								a.grey-text.text-lighten-3(href="#!") Email
+									i.material-icons.left email
+			.footer-copyright.red.darken-2
+				.container © 2014 Temporary Information
+					a.grey-text.text-lighten-4.right(href="#!") LBCC Website?
