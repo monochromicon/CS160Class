@@ -1,8 +1,3 @@
-$(document).ready(function () {
-	$(".button-collapse").sideNav();
-	
-});
-
 var page = angular.module("webpage", ["ngRoute"]);
 
 page.config(function ($routeProvider) {
@@ -30,7 +25,19 @@ page.config(function ($routeProvider) {
 	
 });
 
-page.controller("mainController", ["$scope", function ($scope) {
+page.run(["$location", function ($location) {
+	if ($location.url() === "/") {
+		$(".announce").toggleClass("active");
+	} else if ($location.url() === "/announcements") {
+		$(".announce").toggleClass("active");
+	} else if ($location.url() === "/assignments") {
+		$(".assign").toggleClass("active");
+	} else if ($location.url() === "/forum") {
+		$(".forum").toggleClass("active");
+	}
+}]);
+
+page.controller("mainController", ["$scope", "$location", function ($scope, $location) {
 	$scope.text = "Here are some static words.";
 }]);
 
@@ -45,3 +52,13 @@ page.controller("assignmentController", ["$scope", function ($scope) {
 page.controller("forumController", ["$scope", function ($scope) {
 	$scope.text3 = "Talk amongst yourselves!";
 }]);
+
+$(document).ready(function () {
+	$(".button-collapse").sideNav();
+	
+	$("nav li").click(function () {
+		var pickedClass = "." + $(this).attr("class").split(" ")[2];
+		$(".active").toggleClass("active");
+		$(pickedClass).toggleClass("active");
+	});
+});
